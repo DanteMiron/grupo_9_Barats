@@ -1,0 +1,23 @@
+{
+  "name": "proyectointegrador",
+  "version": "1.0.0",
+  "description": "Nuestro e-commerce está dirigido a un publico global de todas las edades. Se enfoca exclusivamente al mundo de la moda y la indumentaria. Nuestro sitio ofrece una gran variedad exclusiva de marcas y estilos al mejor precio del mercado.\r  Nuestro objetivo es que todas aquellas personas que ingresen a nuestro sitio puedan disfrutar de la comodidad y libertad de encontrar variedad de estilos, con altos estándares de calidad y a bajo costo en un solo lugar. \r Ofrecemos comodidad, simplicidad y contamos con expertos que se especializan en el asesoramiento personalizado para cada cliente, a fin de que pueda encontrar el camino, el estilo y la comodidad que está buscando.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanteMiron/grupo_9_Barats.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanteMiron/grupo_9_Barats/issues"
+  },
+  "homepage": "https://github.com/DanteMiron/grupo_9_Barats#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
