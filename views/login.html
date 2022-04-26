@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styleLogin.css">
+    <title>Barats</title>
+</head>
+
+<body>
+
+    <header>
+        <p class="promocion">WINTER 22 ~ 12 Cuotas Sin Interés ~ ¡Envíos Gratis con compras superiores a $12.000!</p>
+
+        <h2 class="logo">BARATS</h2>
+        <div class="caja-header">
+            <ul class="nav">
+                <li>Tienda</li>
+                <li>Crear cuenta</li>
+                <li>Iniciar sesión</li>
+            </ul>
+            <i class="fa fa-shopping-cart" aria-hidden="true" id="carrito"></i>
+            <ul class="busqueda">
+                <li>HOMBRES</li>
+                <li>MUJERES</li>
+                <li>NIÑOS/AS</li>
+                <li>ACCESORIOS</li>
+                <li>REBAJAS</li>
+            </ul>
+            <form action="" method="" class="barra">
+                <input type="text" name="txtBarra" id="barra">
+            </form>
+            <div class="burger-menu">
+                <i class="fa fa-bars" aria-hidden="true" id="burger"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>CREAR CUENTA</h2>
+            <form action="/login" method="post" class="formulario">
+                <label for="txtUsuario">Nombre de Usuario</label><input type="text" name="txtUsuario" id="txtUsuario" required><span class="feedback" ></span>
+                <label for="txtPassword">Contraseña: </label><input type="password" name="txtPassword" id="txtPassword" required><span class="feedback" ></span>
+                <div id="boton">
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+    </main>
+    <footer>
+        <div class="redes">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </div>
+        <p>J. M. Rosas 556, Funes, Santa FE. 0341 156782564 info@barats.com.ar Copyright BARATS - Ropa y accesorios de
+            Surf - 2022. Todos los derechos reservados
+        </p>
+    </footer>
+</body>
+
+</html>

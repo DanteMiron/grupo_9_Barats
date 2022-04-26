@@ -6,8 +6,9 @@
 }
 
 body {
-    background-image: linear-gradient(135deg, black,white, red,white, black);
+    background-image: linear-gradient(135deg, black, white, red, white, black);
     font-family: 'PT Sans', sans-serif;
+    background-size: contain;
 }
 
 header {
@@ -132,72 +133,61 @@ header {
     width: 70%;
     height: 1.4rem;
 }
+
 main {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     position: relative;
     z-index: 0;
     padding-top: 110px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 10%;
 }
 
-h3 {
+main h2 {
     display: flex;
+    width: 100%;
     justify-content: center;
-    color: black;
-    text-align: center;
-    height: 5%;
-    margin-top: 1%;
-}
-section {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin: 2% 5% 2% 5%;
-    
 }
 
-.articulo {
+.formulario {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    border: solid 4px black;
-    background-color: white;
-    margin-bottom: 1%;
-}
-
-.imagen-articulo {
-    display: flex;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-    height: 76%;
 }
 
-.descripcion {
+main label{
     display: flex;
-    border-top: solid 2px black;
-    padding: 3% 2% 3%;
-    margin: 0;
     width: 100%;
+    padding-bottom: 2%;
     font-weight: bold;
-    height: 8%;
+    padding-top: 2%;
 }
 
-.precio {
+main input{
     display: flex;
-    padding: 3% 2% 3%;
-    margin: 0;
     width: 100%;
-    height: 8%;
+    border: solid 2px black;
 }
 
-.promocion-articulo {
+#boton {
     display: flex;
-    padding: 3% 2% 3%;
-    margin: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-    font-size: 0.8rem;
-    height: 8%;
+    margin-top: 10%;
+    justify-content: space-around;
+}
+
+button {
+    background-color: white;
+    color: red;
+    border-radius: 5px;
+    border: 2px solid negro;
+    font-size: 1.5rem;
 }
 
 footer {
@@ -209,7 +199,7 @@ footer {
     text-align: center;
     padding: 0% 2% 0% 2%;
     justify-content: center;
-    position: absolute;
+    position: relative;
     z-index: 0;
     width: 100%;
 }
@@ -225,47 +215,12 @@ footer {
 }
 
 @media (min-width: 361px) {
-    section {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 2% 5% 2% 5%;
-        justify-content: space-around;
-    }
-
-    h3 {
-        width: 100%;
-    }
-
-    .articulo {
-        width: 48%;
-    }
+    
 
 }
 
-@media (min-width: 769px){
-    section {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 2% 5% 2% 5%;
-        justify-content: space-around;
-    }
-
-    h3 {
-        width: 100%;
-    }
-
-    .articulo {
-        width: 24%;
-    }
-    .imagen-articulo {
-        height: 71%;
-    }
-    .descripcion{
-        height: 13%;
-    }
-
+@media (min-width: 769px) {
+    
     .logo {
         width: 20%;
         font-size: 1.5rem;
@@ -317,6 +272,7 @@ footer {
         width: 15%;
         order: -1;
     }
+
     .burger-menu {
         display: none;
     }
@@ -325,9 +281,9 @@ footer {
         100% {
             font-size: 3rem;
             background-color: black;
-            opacity: 1;  
+            opacity: 1;
         }
-    
+
     }
 
 }
