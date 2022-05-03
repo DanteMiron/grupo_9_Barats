@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head')%>
+
+<body>
+
+    <%- include('../partials/header')%>
+    <main class="mainRegister">
+        <h2 class="tituloRegister">CREAR CUENTA</h2>
+        <form action="/register" method="post" class="formulario">
+            <label class="labelRegister" for="txtNyA">Nombre y Apellido :</label><input class="inputRegister" type="text" name="txtNyA" id="txtNyA" required><span
+                class="feedback"></span>
+            <label class="labelRegister" for="txtEmail">E-mail :</label><input class="inputRegister" type="email" name="txtEmail" id="txtEmail" required><span
+                class="feedback"></span>
+            <label class="labelRegister" for="txtTel">Teléfono :</label><input class="inputRegister" type="num" name="txtTel" id="txtTel" required><span
+                class="feedback"></span>
+            <label class="labelRegister" for="txtPassword">Contraseña :</label><input class="inputRegister" type="password" name="txtPassword" id="txtPassword"
+                required><span class="feedback"></span>
+            <label class="labelRegister" for="txtPasswordConfirmed">Confirmar Contraseña :</label><input class="inputRegister" type="password"
+                name="txtPasswordConfirmed" id="txtPasswordConfirmed" required>
+                <div id="boton">
+                    <button type="reset">Borrar</button>
+                    <button type="submit">Enviar</button>
+                </div>
+        </form>
+      
+    </main>
+    <%- include('../partials/footer')%>
+</body>
+
+</html>

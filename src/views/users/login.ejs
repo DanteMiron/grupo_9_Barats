@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head')%>
+
+<body>
+
+    <%- include('../partials/header')%>
+    <main class="mainLogin">
+        <h2 class="tituloLogin">CREAR CUENTA</h2>
+            <form action="/login" method="post" class="formulario">
+                <label class="labelLogin" for="txtUsuario">Nombre de Usuario</label><input class="inputLogin" type="text" name="txtUsuario" id="txtUsuario" required><span class="feedback" ></span>
+                <label class="labelLogin" for="txtPassword">Contraseña: </label><input class="inputLogin" type="password" name="txtPassword" id="txtPassword" required><span class="feedback" ></span>
+                <div id="boton">
+                    <button type="submit" class="botonLogin">Entrar</button>
+                </div>
+            </form>
+    </main>
+    <%- include('../partials/footer')%>
+</body>
+
+</html>

@@ -6,133 +6,12 @@
 }
 
 body {
-    background-image: linear-gradient(135deg, black,white, red,white, black);
+    background-image: linear-gradient(135deg, black, white, red, white, black);
     font-family: 'PT Sans', sans-serif;
+    background-size: contain;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100vw;
-    font-family: 'PT Sans', sans-serif;
-    background-color: black;
-    color: white;
-    height: 7%;
-    position: fixed;
-    z-index: 10;
-}
-
-.promocion {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0%;
-    padding: 4px;
-    justify-content: center;
-    font-size: 0.8rem;
-    color: white;
-    background-color: red;
-    text-align: center;
-}
-
-.nav {
-    display: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0;
-    justify-content: space-evenly;
-    padding-left: 70%;
-    list-style: none;
-}
-
-.logo {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    font-size: 2.5rem;
-    margin: 0%;
-    align-content: center;
-    letter-spacing: 20px;
-    color: red;
-    opacity: 1;
-    font-family: 'Play', sans-serif;
-    background-color: black;
-}
-
-.caja-header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-around;
-    background-color: black;
-}
-
-#carrito {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 32%;
-    justify-content: center;
-    align-content: center;
-    font-size: 2rem;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    order: 1;
-}
-
-.busqueda {
-    display: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 50%;
-    justify-content: space-around;
-    list-style: none;
-    align-content: center;
-}
-
-.barra {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 32%;
-    justify-content: center;
-    align-content: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-.burger-menu {
-    display: flex;
-    flex-wrap: wrap;
-    color: white;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    background-color: black;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-radius: 5px;
-    width: 32%;
-    padding: 3px;
-    order: -1;
-}
-
-#burger {
-    font-size: 1.5rem;
-}
-
-#barra {
-    display: flex;
-    width: 70%;
-    height: 1.4rem;
-}
-main {
+.mainHome {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -141,7 +20,7 @@ main {
     padding-top: 110px;
 }
 
-h3 {
+.tituloHome {
     display: flex;
     justify-content: center;
     color: black;
@@ -149,7 +28,7 @@ h3 {
     height: 5%;
     margin-top: 1%;
 }
-section {
+.sectionHome {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -200,32 +79,9 @@ section {
     height: 8%;
 }
 
-footer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: black;
-    color: red;
-    text-align: center;
-    padding: 0% 2% 0% 2%;
-    justify-content: center;
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-}
-
-.redes {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-size: 2rem;
-    padding: 2% 0% 0% 70%;
-    width: 100%;
-    justify-content: space-around;
-}
 
 @media (min-width: 361px) {
-    section {
+    .sectionHome {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -233,7 +89,7 @@ footer {
         justify-content: space-around;
     }
 
-    h3 {
+    .tituloHome {
         width: 100%;
     }
 
@@ -244,7 +100,7 @@ footer {
 }
 
 @media (min-width: 769px){
-    section {
+    .sectionHome {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -252,7 +108,7 @@ footer {
         justify-content: space-around;
     }
 
-    h3 {
+    .tituloHome {
         width: 100%;
     }
 
@@ -265,69 +121,4 @@ footer {
     .descripcion{
         height: 13%;
     }
-
-    .logo {
-        width: 20%;
-        font-size: 1.5rem;
-        margin: 0%;
-        padding-left: 5%;
-        letter-spacing: 5px;
-        animation: 2.5s logo infinite alternate;
-        background-color: black;
-    }
-
-    .caja-header {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 80%;
-        justify-content: flex-end;
-        background-color: black;
-    }
-
-    .nav {
-        display: flex;
-        width: 40%;
-        margin: 0;
-        padding-left: 0%;
-        padding-top: 10px;
-        order: -3;
-        justify-content: space-evenly;
-    }
-
-    #carrito {
-        width: 10%;
-        justify-content: center;
-        align-content: center;
-        font-size: 1.5rem;
-        margin-top: 1%;
-        margin-bottom: 1%;
-        order: 0;
-    }
-
-    .busqueda {
-        display: flex;
-        width: 70%;
-        justify-content: space-around;
-        align-content: center;
-        order: -2;
-    }
-
-    .barra {
-        width: 15%;
-        order: -1;
-    }
-    .burger-menu {
-        display: none;
-    }
-
-    @keyframes logo {
-        100% {
-            font-size: 3rem;
-            background-color: black;
-            opacity: 1;  
-        }
-    
-    }
-
 }
