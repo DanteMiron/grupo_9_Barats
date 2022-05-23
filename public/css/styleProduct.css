@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+.mainProducts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+    justify-content: center;
+    min-height: 100vh;
+}
+.producto {
+ display: flex;
+ justify-content: center;
+ position: relative;
+ top: 100px;
+ left: 15%;
+ width: 60%;
+ height: 70%;
+ border:solid black 5px;
+ margin: 100px;
+ margin-bottom: 200px;
+ 
+
+
+}
+.img-producto {
+    display: flex;
+   width: 40%;
+    
+    
+}
+.Info-producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 0.30;
+    width: 60%;
+    background-color: white;
+    border-left: solid black 2px;
+}
+.nombre-producto {
+    display: flex;
+    font-weight: bold;
+}
+#boton-comprar {
+    display: flex;
+    margin-top: 40px;
+}
+p {
+    margin-top:40px;
+}

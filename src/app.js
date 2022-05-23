@@ -4,6 +4,8 @@ const app = express();
 const publicPath = path.resolve(__dirname, '../public');
 const homeRoutes = require ('./routes/homeRoutes');
 const userRoutes = require ('./routes/userRoutes');
+const productosRoutes = require ('./routes/productosRoutes');
+
 
 app.use(express.static(publicPath));
 
@@ -13,3 +15,4 @@ app.set('view engine', 'ejs');
 
 app.use('/', homeRoutes);
 app.use('/', userRoutes);
+app.use('/',productosRoutes)
