@@ -21,6 +21,7 @@ body {
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 10%;
+    min-height: 100vh;
 }
 
 .tituloLogin {
@@ -42,6 +43,19 @@ body {
     padding-bottom: 2%;
     font-weight: bold;
     padding-top: 2%;
+}
+
+.radioLabel {
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.radio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .inputLogin {

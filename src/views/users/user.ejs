@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head')%>
+
+    <body>
+
+        <%- include('../partials/header')%>
+            <main class="mainList">
+                <div class="containerUsers">
+                    <div class="descriptionUser">
+                    <p><b>Nombre y Apellido:</b> <%= userId[0].name %>
+                    </p>
+                    <p><b>E-mail:</b> <%= userId[0].email %>
+                    </p>
+                    <p><b>Telefono:</b> <%= userId[0].tel %>
+                    </p>
+                    <p><b>Contraseña:</b> <%= userId[0].password %>
+                    </p>
+                    </div>
+                    <img  src="/profileImg/<%= userId[0].image ? userId[0].image : 'default.png'; %>" alt="imgUser" class="imgUser" >
+                </div>
+                
+                    <div id="boton">
+                       <a href="/users/<%= userId[0].id %>/edit"><button type="submit">Modificar</button></a> 
+                <form action="/users/<%= userId[0].id %>?_method=DELETE" method="POST">
+                    <button type="submit">Eliminar</button></a>
+                </form>
+                    </div>
+               
+            </main>
+            <%- include('../partials/footer')%>
+    </body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head')%>
+
+<body>
+
+    <%- include('../partials/header')%>
+    <main class="mainProducts">
+        <div class="producto">
+            <img src="/images/gorra.jpg" alt="" class="img-producto">
+            <div class="Info-producto">
+                <p class="nombre-producto">GORRA HURLEY</p>
+                <p>Precio: $3500</p>
+                <p>Cuotas: 3 Sin Interes</p>
+                <p>Color: Negro</p>
+                <p>Talle: L</p>
+                <div id="boton-comprar"><button type="submit">Comprar</button> </div>
+            </div>
+            
+        </div>
+        <div id="boton">
+            <a href="/products/<%= productId[0].id %>/edit"><button type="submit">Modificar</button></a> 
+     <form action="/products/<%= productId[0].id %>?_method=DELETE" method="POST">
+         <button type="submit">Eliminar</button></a>
+     </form>
+         </div>
+    </main>
+    <%- include('../partials/footer')%>
+</body>
+
+</html>

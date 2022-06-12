@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head')%>
+
+    <body>
+
+        <%- include('../partials/header')%>
+            <main class="mainList">
+                <% for(i=0 ; users.length> i; i++){ %>
+                    <a href="../users/<%= users[i].id %>" id="user">
+                        <div class="containerUsers">
+                            <div class="descriptionUser">
+                            <p><b>Nombre y Apellido:</b> <%= users[i].name; %>
+                            </p>
+                            <p><b>E-mail:</b> <%= users[i].email; %>
+                            </p>
+                            <p><b>Telefono:</b> <%= users[i].tel; %>
+                            </p>
+                            <p><b>Contraseña:</b> <%= users[i].password; %>
+                            </p>
+                            </div>
+                            <img src="/profileImg/<%= users[i].image ? users[i].image : 'default.png'; %>" alt="imgUser" class="imgUser">
+                        </div>
+                    </a>
+                    <% } %>
+            </main>
+            <%- include('../partials/footer')%>
+    </body>
+
+</html>

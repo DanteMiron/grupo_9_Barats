@@ -79,6 +79,15 @@ body {
     height: 8%;
 }
 
+.containerUsers {
+    display: flex;
+    background-color: white;
+    border: solid 2px black;
+    margin-bottom: 2%;
+    width: 100%;
+    border-radius: 5px;
+}
+
 
 @media (min-width: 361px) {
     .sectionHome {
@@ -121,4 +130,37 @@ body {
     .descripcion{
         height: 13%;
     }
+    .containerUsers{
+        width: 50%;
+    }
+}
+
+.mainList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 0;
+    padding-top: 110px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 10%;
+    min-height: 100vh;
+}
+
+
+.descriptionUser {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 65%;
+}
+
+.imgUser {
+    display: flex;
+    width: 35%;
+}
+
+#user{
+    color: black
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head')%>
+<body>
+    <%- include('../partials/header')%>
+    <main class="mainLogin">
+        <h2 class="tituloLogin">CREAR PRODUCTO</h2>
+        <form action="/products/create" method="POST" class="formulario" enctype="multipart/form-data">
+            <label for="nameProduct" class="labelLogin">Nombre del Producto :</label><input class="inputLogin"  type="text" name="nameProduct" id="nameProduct">
+            <label for="descriptionProduct" class="labelLogin">Descripción :</label><textarea class="inputLogin"  name="descriptionProduct" id="descriptionProduct" cols="30" rows="10"></textarea>
+            <label for="imageProduct" class="labelLogin">Imagen del producto :</label><input class="inputLogin"  type="file" name="imageProduct" id="imageProduct">
+            <h3 class="labelLogin">Categoría :</h3>
+            <div class="radio">
+            <label for="categoryProduct" class="radioLabel">Hombre</label><input type="radio" name="categoryProduct" id="categoryProduct" value="hombre">
+            <label for="categoryProduct" class="radioLabel">Mujer</label><input type="radio" name="categoryProduct" id="categoryProduct" value="mujer">
+            <label for="categoryProduct" class="radioLabel">Niño</label><input type="radio" name="categoryProduct" id="categoryProduct" value="niño">
+            </div>
+            <h3 class="labelLogin">Tipo :</h3>
+            <div class="radio">
+            <label for="typeProduct" class="radioLabel">Remera</label><input type="radio" name="typeProduct" id="typeProduct" value="remera">
+            <label for="typeProduct" class="radioLabel">Pantalon</label><input type="radio" name="typeProduct" id="typeProduct" value="pantalon">
+            <label for="typeProduct" class="radioLabel">Zapatilla</label><input type="radio" name="typeProduct" id="typeProduct" value="zapatilla">
+            <label for="typeProduct" class="radioLabel">Buzo</label><input type="radio" name="typeProduct" id="typeProduct" value="buzo">
+            <label for="typeProduct" class="radioLabel">Gorra</label><input type="radio" name="typeProduct" id="typeProduct" value="gorra">
+        </div>
+            <label for="priceProduct" class="labelLogin">Precio :</label><input class="inputLogin"  type="number" name="priceProduct" id="priceProduct">
+            <div id="boton">
+                <button type="reset">Borrar</button>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </main>
+    <%- include('../partials/footer')%>
+</body>
+</html>

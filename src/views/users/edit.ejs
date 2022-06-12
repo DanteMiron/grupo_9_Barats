@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head')%>
+
+    <body>
+
+        <%- include('../partials/header')%>
+            <main class="mainRegister">
+                <h2 class="tituloRegister">EDITAR CUENTA</h2>
+                <form action="/users/<%=userId[0].id%>/edit?_method=PUT" method="POST" class="formulario">
+                    <label class="labelRegister" for="name">Nombre y Apellido :</label><input class="inputRegister"
+                        type="text" name="name" id="name" placeholder="<%= userId[0].name %>" required><span
+                        class="feedback"></span>
+                    <label class="labelRegister" for="email">E-mail :</label><input class="inputRegister" type="email"
+                        name="email" id="email" placeholder="<%= userId[0].email %>" required><span
+                        class="feedback"></span>
+                    <label class="labelRegister" for="tel">Teléfono :</label><input class="inputRegister" type="num"
+                        name="tel" id="tel" placeholder="<%= userId[0].tel %>" required><span class="feedback"></span>
+                    <label class="labelRegister" for="password">Contraseña :</label><input class="inputRegister"
+                        type="password" name="password" placeholder="<%= userId[0].password %>" id="password"
+                        required><span class="feedback"></span>
+                    <label class="labelRegister" for="passwordConfirmed">Confirmar Contraseña :</label><input
+                        class="inputRegister" type="password" name="passwordConfirmed" id="passwordConfirmed" required>
+                    <div id="boton">
+                        <button type="reset">Borrar</button>
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+
+            </main>
+            <%- include('../partials/footer')%>
+    </body>
+
+</html>
