@@ -8,8 +8,8 @@
         <%- include('../partials/header')%>
             <main class="mainRegister">
                 <h2 class="tituloRegister">CREAR CUENTA</h2>
-                <% if(locals.errors) { %>
-                    <% errors.forEach %>
+                <!-- <% if(locals.errors) { %>
+                    <% errors.forEach((error , index) => { %> -->
                 <form action="/users/register" method="POST" class="formulario" enctype="multipart/form-data">
                     <label class="labelRegister" for="name">Nombre y Apellido :</label><input class="inputRegister"
                         type="text" name="name" id="name" ><span class="feedback"></span>
@@ -28,7 +28,7 @@
                         <button type="submit">Enviar</button>
                     </div>
                 </form>
-
+                <!-- <% }) %> -->
             </main>
             <%- include('../partials/footer')%>
     </body>

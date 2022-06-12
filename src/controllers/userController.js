@@ -13,6 +13,7 @@ const userController = {
 
     create: function (req, res) {
         let errors = validationResult(req);
+        console.log(errors.array())
         if (req.file && errors.isEmpty()) {
             const body = req.body;
             body.image = req.file.filename;
@@ -20,10 +21,10 @@ const userController = {
             actions.create(body);
             res.redirect('/users');
         } else {
-            res.render('users/register', { errors : errors.array(), old: req.body });
+            res.render('users/register', { errors : errors.array(), old : req.body });
         } 
     },
-    list: function (req, res) {s
+    list: function (req, res) {
         actions.path = path;
         let users = actions.list();
         res.render('users/list', { 'users': users })
