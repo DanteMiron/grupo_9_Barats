@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "name": "Dante",
+    "email": "dantemiron@hotmail.com",
+    "tel": "3413706294",
+    "password": "dantemiron",
+    "passwordConfirmed": "dantemiron",
+    "image": "perfil-1655074245224.jpeg",
+    "id": 0
+  }
+]

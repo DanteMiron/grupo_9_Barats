@@ -13,15 +13,14 @@ const userController = {
 
     create: function (req, res) {
         let errors = validationResult(req);
-        console.log(errors.array())
-        if (req.file && errors.isEmpty()) {
+        if (errors.isEmpty()) {
             const body = req.body;
             body.image = req.file.filename;
             actions.path = path;
             actions.create(body);
             res.redirect('/users');
         } else {
-            res.render('users/register', { errors : errors.array(), old : req.body });
+            res.render('users/register', { errors : errors.mapped(), old: req.body });
         } 
     },
     list: function (req, res) {
@@ -43,12 +42,20 @@ const userController = {
         res.render('users/edit', { 'userId': userId });
     },
     edit: function (req, res) {
+        let errors = validationResult(req);
+        let users = actions.list();
+        let userId = users.filter(user => user.id == req.params.id);
+        if (errors.isEmpty()) {
         const body = req.body;
+        body.image = req.file.filename;
         const usuario = req.params.id;
         actions.path = path;
         actions.edit(usuario, body);
         res.redirect('/users');
-    },
+    } else {
+        res.render('users/edit', { errors : errors.mapped(), old: req.body, 'userId' : userId });
+    }
+ } ,
     delete: function (req, res) {
         const usuario = req.params.id;
         actions.path = path;

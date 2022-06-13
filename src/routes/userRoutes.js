@@ -21,10 +21,10 @@ const upload = multer({ storage });
 
 router.get('/register', userController.register);
 router.get('/login', userController.login);
-router.post('/register', userMiddleware.validateUser , upload.single('img'), userController.create);
+router.post('/register',  upload.single('img'), userMiddleware.validateUser , userController.create);
 router.get('/', userController.list);
 router.get('/:id', userController.user);
 router.get('/:id/edit', userController.editView);
-router.put('/:id/edit', userController.edit);
+router.put('/:id/edit',  upload.single('img'), userMiddleware.validateUser, userController.edit);
 router.delete('/:id', userController.delete)
 module.exports = router; 
