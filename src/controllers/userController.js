@@ -53,7 +53,7 @@ const userController = {
         actions.edit(usuario, body);
         res.redirect('/users');
     } else {
-        res.render('users/edit', { errors : errors.mapped(), old: req.body, 'userId' : userId });
+        res.render('users/edit', { errors : errors.mapped(), old: req.body, 'userId' : userId, old: req.body });
     }
  } ,
     delete: function (req, res) {

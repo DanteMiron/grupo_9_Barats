@@ -4,17 +4,25 @@
     <%- include('../partials/head')%>
 
 <body>
-
+ 
     <%- include('../partials/header')%>
     <main class="mainProducts">
         <div class="producto">
-            <img src="/images/gorra.jpg" alt="" class="img-producto">
-            <div class="Info-producto">
-                <p class="nombre-producto">GORRA HURLEY</p>
-                <p>Precio: $3500</p>
-                <p>Cuotas: 3 Sin Interes</p>
-                <p>Color: Negro</p>
-                <p>Talle: L</p>
+            <img src="/productImg/<%= productId[0].image ? productId[0].image : 'default.png'; %>" alt="" class="img-producto">
+            <div class="info-producto">
+                <p class="nombre-producto"><%= productId[0].nameProduct %></p>
+                <p><b>Precio:</b> $<%= productId[0].priceProduct %></p>
+                <p><b>Cuotas:</b> <%= productId[0].cuotas %> Sin Interes</p>
+                <p><b>Tipo:</b> <%= productId[0].typeProduct %></p>
+                <p><b>Categoría:</b> <%= productId[0].categoryProduct %></p>
+                <p><b>Descripción:</b> <%= productId[0].descriptionProduct %></p>
+                <p><b>Talle:</b> </p>
+                <div class="radio">
+                <label for="talle" class="radioLabel">S</label><input type="radio" name="talle" id="talle" value="S">
+                <label for="talle" class="radioLabel">M</label><input type="radio" name="talle" id="talle" value="M">
+                <label for="talle" class="radioLabel">L</label><input type="radio" name="talle" id="talle" value="L">
+                <label for="talle" class="radioLabel">XL</label><input type="radio" name="talle" id="talle" value="XL">
+                </div>
                 <div id="boton-comprar"><button type="submit">Comprar</button> </div>
             </div>
             

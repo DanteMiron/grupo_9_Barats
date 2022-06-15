@@ -4,7 +4,7 @@
 <body>
     <%- include('../partials/header')%>
     <main class="mainLogin">
-        <h2 class="tituloLogin">CREAR PRODUCTO</h2>
+        <h2 class="tituloLogin">EDITAR PRODUCTO</h2>
         <form action="/products/<%=productId[0].id%>/edit?_method=PUT" method="POST" class="formulario" enctype="multipart/form-data">
             <label for="nameProduct" class="labelLogin">Nombre del Producto :</label><input class="inputLogin"  type="text" name="nameProduct" id="nameProduct">
             <label for="descriptionProduct" class="labelLogin">Descripción :</label><textarea class="inputLogin"  name="descriptionProduct" id="descriptionProduct" cols="30" rows="10"></textarea>

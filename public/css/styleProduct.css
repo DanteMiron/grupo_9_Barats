@@ -8,29 +8,31 @@
     position: relative;
     justify-content: center;
     min-height: 100vh;
+    padding-bottom: 10%;
 }
+
 .producto {
- display: flex;
- justify-content: center;
- position: relative;
- top: 100px;
- left: 15%;
- width: 60%;
- height: 70%;
- border:solid black 5px;
- margin: 100px;
- margin-bottom: 200px;
- 
-
-
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+    left: 15%;
+    width: 60%;
+    height: 70%;
+    border: solid black 5px;
+    margin: 100px;
+    margin-bottom: 200px;
+    border-radius: 9px;
 }
+
 .img-producto {
     display: flex;
-   width: 40%;
-    
-    
+    width: 40%;
+
+
 }
-.Info-producto {
+
+.info-producto {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,15 +40,21 @@
     width: 60%;
     background-color: white;
     border-left: solid black 2px;
+    padding-left: 2%;
+    padding-bottom: 2%;
 }
+
 .nombre-producto {
     display: flex;
     font-weight: bold;
 }
+
 #boton-comprar {
     display: flex;
     margin-top: 40px;
+    justify-content: center;
 }
+
 p {
-    margin-top:40px;
+    margin-top: 40px;
 }

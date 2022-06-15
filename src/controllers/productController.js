@@ -1,5 +1,6 @@
+const { validationResult } = require('express-validator');
 const actions = require('../database/actions');
-const path = '\\JSON\\products.json' 
+const path = '\\JSON\\products.json'  
 
 
 const productController = {
@@ -10,14 +11,16 @@ const productController = {
         res.render('products/create');
     },
     create: function (req, res) {
-        if (req.file) {
+        let errors = validationResult(req);
+        console.log(errors)
+        if (errors.isEmpty()) {
             const body = req.body;
             body.image = req.file.filename;
             actions.path = path;
             actions.create(body);
             res.redirect('/products');
         } else {
-            res.render('products/create');
+            res.render('products/create', { errors : errors.mapped()});
         }
     },
     list: function (req, res) {
@@ -38,12 +41,23 @@ const productController = {
         res.render('products/edit', { 'productId': productId });
     },
     edit: function (req, res) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
         const body = req.body;
         const producto = req.params.id;
         actions.path = path;
         actions.edit(producto, body);
-        res.redirect('/products');
+        res.redirect('/products'); 
+        } else {
+            res.render('products/edit',{ errors : errors.mapped(), old: req.body})
+        }
     },
+    delete: function (req, res) {
+        const producto = req.params.id;
+        actions.path = path;
+        actions.delete(producto);
+        res.redirect('/products');
+    }
 
 }
 

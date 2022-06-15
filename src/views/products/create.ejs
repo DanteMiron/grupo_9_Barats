@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head')%>
-<body>
+<body> 
     <%- include('../partials/header')%>
     <main class="mainLogin">
         <h2 class="tituloLogin">CREAR PRODUCTO</h2>
         <form action="/products/create" method="POST" class="formulario" enctype="multipart/form-data">
             <label for="nameProduct" class="labelLogin">Nombre del Producto :</label><input class="inputLogin"  type="text" name="nameProduct" id="nameProduct">
+            <%= (locals.errors && errors.nameProduct) ? errors.nameProduct.msg + ' 👆' : "" %>
             <label for="descriptionProduct" class="labelLogin">Descripción :</label><textarea class="inputLogin"  name="descriptionProduct" id="descriptionProduct" cols="30" rows="10"></textarea>
+            <%= (locals.errors && errors.descriptionProduct) ? errors.descriptionProduct.msg + ' 👆' : "" %>
             <label for="imageProduct" class="labelLogin">Imagen del producto :</label><input class="inputLogin"  type="file" name="imageProduct" id="imageProduct">
+            <%= (locals.errors && errors.imageProduct) ? errors.imageProduct.msg + ' 👆' : "" %>
             <h3 class="labelLogin">Categoría :</h3>
+            <%= (locals.errors && errors.categoryProduct) ? errors.categoryProduct.msg + ' 👉' : "" %>
             <div class="radio">
             <label for="categoryProduct" class="radioLabel">Hombre</label><input type="radio" name="categoryProduct" id="categoryProduct" value="hombre">
             <label for="categoryProduct" class="radioLabel">Mujer</label><input type="radio" name="categoryProduct" id="categoryProduct" value="mujer">
             <label for="categoryProduct" class="radioLabel">Niño</label><input type="radio" name="categoryProduct" id="categoryProduct" value="niño">
             </div>
             <h3 class="labelLogin">Tipo :</h3>
+            <%= (locals.errors && errors.typeProduct) ? errors.typeProduct.msg + ' 👉' : "" %>
             <div class="radio">
             <label for="typeProduct" class="radioLabel">Remera</label><input type="radio" name="typeProduct" id="typeProduct" value="remera">
             <label for="typeProduct" class="radioLabel">Pantalon</label><input type="radio" name="typeProduct" id="typeProduct" value="pantalon">
@@ -23,7 +28,16 @@
             <label for="typeProduct" class="radioLabel">Buzo</label><input type="radio" name="typeProduct" id="typeProduct" value="buzo">
             <label for="typeProduct" class="radioLabel">Gorra</label><input type="radio" name="typeProduct" id="typeProduct" value="gorra">
         </div>
-            <label for="priceProduct" class="labelLogin">Precio :</label><input class="inputLogin"  type="number" name="priceProduct" id="priceProduct">
+        
+        <label for="priceProduct" class="labelLogin">Precio :</label><input class="inputLogin"  type="number" name="priceProduct" id="priceProduct">
+        <%= (locals.errors && errors.priceProduct) ? errors.priceProduct.msg + ' 👆' : "" %>
+        <label for="cuotas" class="labelLogin">Cuotas :</label>
+                        <select name="cuotas" id="cuotas" class="inputLogin" >
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                        </select>
             <div id="boton">
                 <button type="reset">Borrar</button>
                 <button type="submit">Enviar</button>
@@ -31,5 +45,5 @@
         </form>
     </main>
     <%- include('../partials/footer')%>
-</body> 
+</body>  
 </html>
