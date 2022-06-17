@@ -1,3 +1,4 @@
+const bcryptjs = require('bcryptjs');
 const req = require('express/lib/request');
 const res = require('express/lib/response');
 const fs = require ('fs')
@@ -14,7 +15,9 @@ const actions = {
         if(jsonData.length > 0){
             id = jsonData.length;
         }
-        const user = {...data,id}; 
+        const user = {...data,id};
+        user.password = bcryptjs.hashSync(user.password, 10);
+        user.passwordConfirmed = bcryptjs.hashSync(user.passwordConfirmed, 10);
         jsonData.push(user);
         fs.writeFileSync((__dirname + this.path), JSON.stringify(jsonData, null, 2));
         return jsonData;

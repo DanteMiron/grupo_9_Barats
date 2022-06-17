@@ -1,3 +1,4 @@
+const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const actions = require('../database/actions');
 const path = '\\JSON\\users.json';
@@ -57,11 +58,12 @@ const userController = {
     }
  } ,
     delete: function (req, res) {
+        {
         const usuario = req.params.id;
         actions.path = path;
         actions.delete(usuario);
         res.redirect('/users');
     }
 }
-
+}
 module.exports = userController;
