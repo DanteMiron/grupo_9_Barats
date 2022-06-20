@@ -6,11 +6,16 @@ const homeRoutes = require ('./routes/homeRoutes');
 const userRoutes = require ('./routes/userRoutes');
 const productRoutes = require ('./routes/productRoutes');
 const methodOverride = require('method-override');
+const session = require('express-session');
 
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static(publicPath));
+app.use(session({
+    secret: 'mensaje secreto',
+}
+));
 
 app.listen(3000, () => console.log("Servidor Funcionando"));
 
