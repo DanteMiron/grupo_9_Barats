@@ -1,15 +1,19 @@
 const { body } = require('express-validator');
 const actions = require('../database/actions');
+const path = '\\JSON\\users.json';
 
+actions.path = path;
+let user = actions.list();
 let userMiddlewares = {
  validateUser : [
     body('name').notEmpty().withMessage('Debes completar este campo'),
     body('email').notEmpty().withMessage('Debes completar este campo').bail().isEmail().withMessage('Debes colocar un email valido').custom((value, {req})=>{
-        if((actions.list()).find(user => user.email == req.body.email)){
+        if(user.find(user => user.email === req.body.email)){
             throw new Error ('Email ya registrado')
         }
         return true
-    }),
+    })
+    ,
     body('tel').notEmpty().withMessage('Debes completar este campo').bail().isInt().withMessage('Debes ingresar un numero').bail().isLength({ min: 8 }).withMessage('El numero de telefono debe contener al menos 8 caracteres'),
     body('password').notEmpty().withMessage('Debes completar este campo').bail().isLength({ min : 8}).withMessage('La contraseña al menos debe tener 8 caracteres'), 
     body('img').custom((value, {req}) => {

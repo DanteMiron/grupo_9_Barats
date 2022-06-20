@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator');
 const actions = require('../database/actions');
-const path = '\\JSON\\products.json'  
+const path = '\\JSON\\products.json'; 
 
 
 const productController = {

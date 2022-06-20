@@ -11,7 +11,25 @@ const userController = {
     login: function (req, res) {
         res.render('users/login');
     },
-
+    loginConfirmed: function (req, res){
+      actions.path = path;
+      let users= actions.list();
+      let userOk = users.find(user =>  user.email == req.body.email)
+      if(userOk){
+         let passwordOk= bcryptjs.compareSync(req.body.password , userOk.password );
+         if(passwordOk){
+            res.redirect('/users/' + userOk.id)
+         }
+        } 
+        return res.render('users/login', {
+            errors:{ 
+                email: {
+                    msg: 'Email no registrado'
+                }
+            }
+        })
+        
+    },
     create: function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {

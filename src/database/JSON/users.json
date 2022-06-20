@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "name": "Dante Miron",
+    "email": "dantemiron@hotmail.com",
+    "tel": "3413706294",
+    "password": "$2a$10$gtLXqOKGVmxbBWTSrbpwue/YVSYWPKIMdZ57kB1w89go9InVSLGWS",
+    "passwordConfirmed": "$2a$10$IeoiArW.3MAHdFd/7sKv6uhBciDILMVhbN71W6IlF2NDNZBAgoW2W",
+    "image": "perfil-1655648253250.jpg",
+    "id": 0
+  }
+]
