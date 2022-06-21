@@ -7,15 +7,23 @@ const userRoutes = require ('./routes/userRoutes');
 const productRoutes = require ('./routes/productRoutes');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddlewares');
+const cookies = require('cookie-parser');
 
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static(publicPath));
+app.use(cookies());
 app.use(session({
     secret: 'mensaje secreto',
+    resave: false,
+    saveUninitialized: false,
 }
 ));
+
+app.use(userLoggedMiddleware);
+
 
 app.listen(3000, () => console.log("Servidor Funcionando"));
 

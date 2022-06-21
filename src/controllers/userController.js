@@ -18,6 +18,12 @@ const userController = {
       if(userOk){
          let passwordOk= bcryptjs.compareSync(req.body.password , userOk.password );
          if(passwordOk){
+            delete userOk.password;
+            delete userOk.passwordConfirmed;
+            req.session.userLogged = userOk;
+            if(req.body.remember_user){
+                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60})
+            }
             res.redirect('/users/' + userOk.id)
          }
         } 
@@ -82,6 +88,10 @@ const userController = {
         actions.delete(usuario);
         res.redirect('/users');
     }
-}
+},
+    logout: function(req, res) {
+        req.session.destroy();
+        res.redirect('/users/login');
+    } 
 }
 module.exports = userController;

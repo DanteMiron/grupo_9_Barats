@@ -4,9 +4,12 @@
     <h2 class="logo"><a href="/" >BARATS</a></h2>
     <div class="caja-header">
         <ul class="nav">
-            <li>Tienda</li>
+            <% if (locals.isLogged){ %>
+            <li>MI CUENTA</li>
+            <% } else { %>
             <a href="/users/register"><li>Crear cuenta</li></a>
-            <a href="/users/login"><li>Iniciar sesión</li></a> 
+            <a href="/users/login"><li>Iniciar sesión</li></a>
+            <% } %> 
         </ul>
         <i class="fa fa-shopping-cart" aria-hidden="true" id="carrito"></i>
         <ul class="busqueda">
