@@ -154,6 +154,8 @@ body {
     flex-direction: column;
     padding: 2%;
     width: 65%;
+    justify-content: center;
+    align-items: center;
 }
 
 .imgUser {
