@@ -28,8 +28,6 @@
 .img-producto {
     display: flex;
     width: 40%;
-
-
 }
 
 .info-producto {
@@ -55,6 +53,3 @@
     justify-content: center;
 }
 
-p {
-    margin-top: 40px;
-}

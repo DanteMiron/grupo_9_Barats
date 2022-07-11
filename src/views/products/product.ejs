@@ -8,14 +8,14 @@
     <%- include('../partials/header')%>
     <main class="mainProducts">
         <div class="producto">
-            <img src="/productImg/<%= productId[0].image ? productId[0].image : 'default.png'; %>" alt="" class="img-producto">
+            <img src="/productImg/<%= productId.image ? productId.image : 'default.png'; %>" alt="" class="img-producto">
             <div class="info-producto">
-                <p class="nombre-producto"><%= productId[0].nameProduct %></p>
-                <p><b>Precio:</b> $<%= productId[0].priceProduct %></p>
-                <p><b>Cuotas:</b> <%= productId[0].cuotas %> Sin Interes</p>
-                <p><b>Tipo:</b> <%= productId[0].typeProduct %></p>
-                <p><b>Categoría:</b> <%= productId[0].categoryProduct %></p>
-                <p><b>Descripción:</b> <%= productId[0].descriptionProduct %></p>
+                <p class="nombre-producto"><%= productId.name %></p>
+                <p><b>Precio:</b> $<%= productId.price %></p>
+                <p><b>Cuotas:</b> <%= productId.fees %> Sin Interes</p>
+                <p><b>Tipo:</b> <%= type[productId.tipo_id].name; %></p>
+                <p><b>Categoría:</b> <%=category[productId.categoría_id].name;%></p>
+                <p><b>Descripción:</b> <%= productId.descriptionProduct %></p>
                 <p><b>Talle:</b> </p>
                 <div class="radio">
                 <label for="talle" class="radioLabel">S</label><input type="radio" name="talle" id="talle" value="S">
@@ -28,8 +28,8 @@
             
         </div>
         <div id="boton">
-            <a href="/products/<%= productId[0].id %>/edit"><button type="submit">Modificar</button></a> 
-     <form action="/products/<%= productId[0].id %>?_method=DELETE" method="POST">
+            <a href="/products/<%= productId.id %>/edit"><button type="submit">Modificar</button></a> 
+     <form action="/products/<%= productId.id %>?_method=DELETE" method="POST">
          <button type="submit">Eliminar</button></a>
      </form>
          </div>

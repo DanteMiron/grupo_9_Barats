@@ -15,18 +15,18 @@
             <h3 class="labelLogin">Categoría :</h3>
             <%= (locals.errors && errors.categoryProduct) ? errors.categoryProduct.msg + ' 👉' : "" %>
             <div class="radio">
-            <label for="categoryProduct" class="radioLabel">Hombre</label><input type="radio" name="categoryProduct" id="categoryProduct" value="hombre">
-            <label for="categoryProduct" class="radioLabel">Mujer</label><input type="radio" name="categoryProduct" id="categoryProduct" value="mujer">
-            <label for="categoryProduct" class="radioLabel">Niño</label><input type="radio" name="categoryProduct" id="categoryProduct" value="niño">
+            <label for="categoryProduct" class="radioLabel">Hombre</label><input type="radio" name="categoryProduct" id="categoryProduct" value="0">
+            <label for="categoryProduct" class="radioLabel">Mujer</label><input type="radio" name="categoryProduct" id="categoryProduct" value="1">
+            <label for="categoryProduct" class="radioLabel">Niño</label><input type="radio" name="categoryProduct" id="categoryProduct" value="2">
             </div>
             <h3 class="labelLogin">Tipo :</h3>
             <%= (locals.errors && errors.typeProduct) ? errors.typeProduct.msg + ' 👉' : "" %>
             <div class="radio">
-            <label for="typeProduct" class="radioLabel">Remera</label><input type="radio" name="typeProduct" id="typeProduct" value="remera">
-            <label for="typeProduct" class="radioLabel">Pantalon</label><input type="radio" name="typeProduct" id="typeProduct" value="pantalon">
-            <label for="typeProduct" class="radioLabel">Zapatilla</label><input type="radio" name="typeProduct" id="typeProduct" value="zapatilla">
-            <label for="typeProduct" class="radioLabel">Buzo</label><input type="radio" name="typeProduct" id="typeProduct" value="buzo">
-            <label for="typeProduct" class="radioLabel">Gorra</label><input type="radio" name="typeProduct" id="typeProduct" value="gorra">
+            <label for="typeProduct" class="radioLabel">Remera</label><input type="radio" name="typeProduct" id="typeProduct" value="0">
+            <label for="typeProduct" class="radioLabel">Pantalon</label><input type="radio" name="typeProduct" id="typeProduct" value="1">
+            <label for="typeProduct" class="radioLabel">Zapatilla</label><input type="radio" name="typeProduct" id="typeProduct" value="2">
+            <label for="typeProduct" class="radioLabel">Buzo</label><input type="radio" name="typeProduct" id="typeProduct" value="3">
+            <label for="typeProduct" class="radioLabel">Gorra</label><input type="radio" name="typeProduct" id="typeProduct" value="4">
         </div>
         
         <label for="priceProduct" class="labelLogin">Precio :</label><input class="inputLogin"  type="number" name="priceProduct" id="priceProduct">

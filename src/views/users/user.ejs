@@ -8,21 +8,21 @@
         <%- include('../partials/header')%>
             <main class="mainList">
 
-            <h2 style="text-align: center;">Hola <%= userId[0].name %> </h2>
+            <h2 style="text-align: center;">Hola <%= userId.name %> </h2>
                 <div class="containerUsers">
                     <div class="descriptionUser">
-                    <p><b>Nombre y Apellido:</b> <%= userId[0].name %>
+                    <p><b>Nombre y Apellido:</b> <%= userId.name %>
                     </p>
-                    <p><b>E-mail:</b> <%= userId[0].email %>
+                    <p><b>E-mail:</b> <%= userId.email %>
                     </p>
-                    <p><b>Telefono:</b> <%= userId[0].tel %>
+                    <p><b>Telefono:</b> <%= userId.tel %>
                     </div>
-                    <img  src="/profileImg/<%= userId[0].image ? userId[0].image : 'default.png'; %>" alt="imgUser" class="imgUser" >
+                    <img  src="/profileImg/<%= userId.image ? userId.image : 'default.png'; %>" alt="imgUser" class="imgUser" >
                 </div>
                 
                     <div id="boton">
-                       <a href="/users/<%= userId[0].id %>/edit"><button type="submit">Modificar</button></a> 
-                <form action="/users/<%= userId[0].id %>?_method=DELETE" method="POST">
+                       <a href="/users/<%= userId.id %>/edit"><button type="submit">Modificar</button></a> 
+                <form action="/users/<%= userId.id %>?_method=DELETE" method="POST">
                     <button type="submit" >Eliminar</button></a>
                 </form>
                     </div>

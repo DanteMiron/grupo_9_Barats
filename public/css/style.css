@@ -155,7 +155,7 @@ body {
     padding: 2%;
     width: 65%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .imgUser {
@@ -164,5 +164,10 @@ body {
 }
 
 #user{
-    color: black
+    color: black;
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
+

@@ -9,9 +9,12 @@
             <main class="mainRegister">
                 <h2 class="tituloRegister">CREAR CUENTA</h2>
                 <form action="/users/register" method="POST" class="formulario" enctype="multipart/form-data">
-                    <label class="labelRegister" for="name">Nombre y Apellido :</label><input class="inputRegister"
+                    <label class="labelRegister" for="name">Nombre :</label><input class="inputRegister"
                         type="text" name="name" id="name" value="<%= locals.old ? old.name : null%>">
                     <%= (locals.errors && errors.name) ? errors.name.msg + ' 👆' : "" %>
+                    <label class="labelRegister" for="lastName">Apellido :</label><input class="inputRegister"
+                        type="text" name="lastName" id="lastName" value="<%= locals.old ? old.lastName : null%>">
+                    <%= (locals.errors && errors.lastName) ? errors.lastName.msg + ' 👆' : "" %>
                         <label class="labelRegister" for="email">E-mail :</label><input class="inputRegister"
                             type="email" name="email" id="email" value="<%= locals.old ? old.email : null%>">
                         <%= (locals.errors && errors.email) ? errors.email.msg + ' 👆' : "" %>

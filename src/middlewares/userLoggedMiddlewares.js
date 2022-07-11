@@ -1,16 +1,16 @@
 const actions = require('../database/actions');
 const path = '\\JSON\\users.json';
+const db = require("../../database/models");
 
-actions.path = path;
-let users = actions.list();
 
 function userLoggedMiddleware(req,res,next){
     res.locals.isLogged = false;
-    
+    db.Usuario.findAll()
+    .then(function(users){
     let emailInCookie = req.cookies.userEmail;
     let userFromCookie = users.find ( user => user.email === emailInCookie);
     
-    console.log(userFromCookie);
+   
     if(userFromCookie){
         req.session.userLogged = userFromCookie;
     }
@@ -20,6 +20,7 @@ function userLoggedMiddleware(req,res,next){
     }
 
     next ();
+})
 }
 
 module.exports = userLoggedMiddleware;

@@ -9,7 +9,7 @@
             <main class="mainLogin">
                 <h2 class="tituloLogin">INICIAR SESIÓN</h2>
                 <form action="/users/login" method="post" class="formulario">
-                    <label class="labelLogin" for="email">Nombre de Usuario :</label><input class="inputLogin"
+                    <label class="labelLogin" for="email">Email de Usuario :</label><input class="inputLogin"
                         type="text" name="email" id="email" >
                         <%= (locals.errors && errors.email) ? errors.email.msg + ' 👆' : "" %>
                     <label class="labelLogin" for="password">Contraseña :</label><input class="inputLogin"

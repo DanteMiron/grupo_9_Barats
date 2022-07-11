@@ -23,7 +23,7 @@ router.get('/', productController.list);
 router.post('/create', upload.single('imageProduct'), productMiddlewares.validateProduct, productController.create);
 router.get('/:id', productController.product);
 router.get('/:id/edit', productController.editView);
-router.put('/:id/edit', productController.edit);
+router.put('/:id/edit', upload.single('imageProduct'), productController.edit);
 router.delete('/:id', productController.delete)
 
 
