@@ -77,14 +77,27 @@ const productController = {
         }
     },
     delete: function (req, res) {
-        db.Usuario.destroy({
+        db.Producto.destroy({
             where: {
                 id : req.params.id
             }
            })
         res.redirect('/products');
-    }
+    },
+    hombres: function(req,res){
+        let pedidoPelicula = db.Producto.findAll({
+            where:{
+                categoría_id: 0
+            }
+        });
+        let pedidoCategoria = db.Categoria.findAll();
+        let pedidoTipo = db.Tipo.findAll();
 
+        Promise.all([pedidoPelicula,pedidoTipo,pedidoCategoria])
+            .then(function([products,type,category]){
+                res.render('products/hombres', { products: products, category: category, type : type })
+            })
+    }
 }
 
 module.exports = productController;

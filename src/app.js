@@ -25,13 +25,15 @@ app.use(session({
 app.use(userLoggedMiddleware);
 
 
-app.listen(3000, () => console.log("Servidor Funcionando"));
+
 
 app.set('view engine', 'ejs');
 
 app.use('/', homeRoutes);
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
+
+app.listen(3000, () => console.log("Servidor Funcionando"));
 
 app.use((req,res,next )=>{
 res.status(404).send("Not-Found");
