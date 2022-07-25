@@ -7,21 +7,32 @@
 
         <%- include('../partials/header')%>
             <main class="mainList">
-                <% for(i=0 ; users.length> i; i++){ %>
-                    <a href="../users/<%= users[i].id %>" id="user">
-                        <div class="containerUsers">
-                            <div class="descriptionUser">
-                            <p><b>Nombre y Apellido:</b> <%= users[i].name; %>
-                            </p>
-                            <p><b>E-mail:</b> <%= users[i].email; %>
-                            </p>
-                            <p><b>Telefono:</b> <%= users[i].tel; %>
-                            </p>
-                            </div>
-                            <img src="/profileImg/<%= users[i].image ? users[i].image : 'default.png'; %>" alt="imgUser" class="imgUser">
-                        </div>
-                    </a>
-                    <% } %>
+                
+                    <table class="table">
+                        <tr class="tr">
+                            <th class="thImg"></th>
+                            <th class="th">Nombre</th>
+                            <th class="th">Apellido</th>
+                            <th class="th">Telefono</th>
+                            <th class="th">Email</th>
+                            <th class="thImgDos"></th>
+                        </tr>
+                        <% for(i=0 ; users.length> i; i++){ %>
+                        <tr class="tr">
+                            <td class="tdImg"><img src="/profileImg/<%= users[i].image ? users[i].image : 'default.png'; %>" alt="imgUser" class="imgList"></td>
+                            <td class="td"><%= users[i].name %> </td>
+                            <td class="td"><%= users[i].last_name %></td>
+                            <td class="td"><%= users[i].tel%></td>
+                            <td class="td"><%= users[i].email %></td>
+                            <td class="td"><a href="/users/<%= users[i].id %>/edit"><button type="submit"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                <form action="/users/<%= users[i].id %>?_method=DELETE" method="POST">
+                                    <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
+                                </form>
+                            </td>
+                        </tr>
+                        <% } %>
+                      </table>
+                   
             </main>
             <%- include('../partials/footer')%>
     </body>

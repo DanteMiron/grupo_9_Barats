@@ -17,19 +17,20 @@ let storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-// Creación producto
+
+router.get('/ninos', productController.ninos);
+
 router.get('/create', productController.registerProduct);
 router.post('/create', upload.single('imageProduct'), productMiddlewares.validateProduct, productController.create);
-// Lista de productos
+
 router.get('/', productController.list);  
-// Editar Producto
+
 router.get('/:id/edit', productController.editView);
 router.put('/:id/edit', upload.single('imageProduct'), productController.edit);
-// Borrar Producto 
 router.delete('/:id', productController.delete);
-// Productos Hombres
 router.get('/hombres', productController.hombres);
-// Producto Particular
+router.get('/mujeres', productController.mujeres);
+router.get('/accesorios', productController.accesorios);
 router.get('/:id', productController.product);
 
 

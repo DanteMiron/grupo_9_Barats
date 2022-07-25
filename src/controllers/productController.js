@@ -38,17 +38,6 @@ const productController = {
             })
         
     },
-    product: function (req, res) {
-        let pedidoPelicula = db.Producto.findByPk(req.params.id);
-        let pedidoCategoria = db.Categoria.findAll();
-        let pedidoTipo = db.Tipo.findAll();
- 
-         Promise.all([pedidoPelicula,pedidoTipo,pedidoCategoria])
-             .then(function([productId,type,category]){
-                 res.render('products/product', { productId: productId, category: category, type : type })
-             })
-        
-    },
     editView: function (req, res) {
         db.Producto.findByPk(req.params.id)
         .then(function(productId){
@@ -97,7 +86,61 @@ const productController = {
             .then(function([products,type,category]){
                 res.render('products/hombres', { products: products, category: category, type : type })
             })
+    },
+     mujeres: function(req,res){
+        let pedidoPelicula = db.Producto.findAll({
+            where:{
+                categoría_id: 1
+            }
+        });
+        let pedidoCategoria = db.Categoria.findAll();
+        let pedidoTipo = db.Tipo.findAll();
+
+        Promise.all([pedidoPelicula,pedidoTipo,pedidoCategoria])
+            .then(function([products,type,category]){
+                res.render('products/mujeres', { products: products, category: category, type : type })
+            })
+    },
+    ninos: function(req,res){
+        let pedidoPelicula = db.Producto.findAll({
+            where:{
+                categoría_id: 2
+            }
+        });
+        let pedidoCategoria = db.Categoria.findAll();
+        let pedidoTipo = db.Tipo.findAll();
+
+        Promise.all([pedidoPelicula,pedidoTipo,pedidoCategoria])
+            .then(function([products,type,category]){
+                res.render('products/ninos', { products: products, category: category, type : type })
+            })
+    },
+    accesorios: function (req,res){
+        let pedidoPelicula = db.Producto.findAll({
+            where:{
+                categoría_id: 3
+            }
+        });
+        let pedidoCategoria = db.Categoria.findAll();
+        let pedidoTipo = db.Tipo.findAll();
+
+        Promise.all([pedidoPelicula,pedidoTipo,pedidoCategoria])
+            .then(function([products,type,category]){
+                res.render('products/accesorios', { products: products, category: category, type : type })
+            })
+    },
+    product: function (req, res) {
+        let pedidoPelicula = db.Producto.findByPk(req.params.id);
+        let pedidoCategoria = db.Categoria.findAll();
+        let pedidoTipo = db.Tipo.findAll();
+ 
+         Promise.all([pedidoPelicula,pedidoTipo,pedidoCategoria])
+             .then(function([productId,type,category]){
+                 res.render('products/product', { productId: productId, category: category, type : type })
+             })
+        
     }
+
 }
 
 module.exports = productController;

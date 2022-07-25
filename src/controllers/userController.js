@@ -41,7 +41,6 @@ const userController = {
     create: function (req, res) {
         let errors = validationResult(req);
         let passwordOk = bcryptjs.hashSync(req.body.password, 10)
-        console.log(passwordOk)
         if (errors.isEmpty()) {
             db.Usuario.create({
                 name: req.body.name,

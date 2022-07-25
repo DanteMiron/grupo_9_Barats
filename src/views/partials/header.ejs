@@ -5,7 +5,8 @@
     <div class="caja-header">
         <ul class="nav">
             <% if (locals.isLogged){ %>
-            <li>MI CUENTA</li>
+            <li>MI CUENTA </li>
+            <li><img class="imgLogged" src="profileImg/<%= locals.userLogged.image %>" alt=""></li>
             <% } else { %>
             <a href="/users/register"><li>Crear cuenta</li></a>
             <a href="/users/login"><li>Iniciar sesión</li></a>
@@ -13,10 +14,10 @@
         </ul>
         <i class="fa fa-shopping-cart" aria-hidden="true" id="carrito"></i>
         <ul class="busqueda">
-            <li>HOMBRES</li>
-            <li>MUJERES</li>
-            <li>NIÑOS/AS</li>
-            <li>ACCESORIOS</li>
+            <a href="/products/hombres"><li>HOMBRES</li></a>
+            <a href="/products/mujeres"><li>MUJERES</li></a>
+            <a href="/products/ninos"><li>NIÑOS/AS</li></a>
+            <a href="/products/accesorios"><li>ACCESORIOS</li></a>
             <li>REBAJAS</li>
         </ul>
         <form action="" method="" class="barra">

@@ -22,7 +22,7 @@ const upload = multer({ storage });
 router.get('/register', guestMiddlewares, userController.register);
 router.get('/login', guestMiddlewares, userController.login);
 router.post('/login', userController.loginConfirmed);
-router.post('/register',  upload.single('img'), userMiddleware.validateUser , userController.create);
+router.post('/register',upload.single('img'), userMiddleware.validateUser, userController.create);
 router.get('/', userController.list);
 router.get('/:id', userController.user);
 router.get('/:id/edit', userController.editView);

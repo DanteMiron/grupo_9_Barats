@@ -8,30 +8,14 @@
         <main class="mainHome">
             <section class="sectionHome">
                 <h3 class="tituloHome">Ofertas</h3>
+                <% products.forEach((user,index) => { %>
                 <div class="articulo">
-                    <img src="/images/calza.jpg" alt="" class="imagen-articulo">
-                    <p class="descripcion">Calza Mujer</p>
-                    <p class="precio">$4500</p>
-                    <p class="promocion-articulo">12 cuotas sin interes</p>
+                    <img src="/productImg/<%= products[index].image ? products[index].image : 'default.png'; %>" alt="" class="imagen-articulo">
+                    <p class="descripcion"><%= products[index].name %> </p>
+                    <p class="precio">$<%= products[index].price %> </p>
+                    <p class="promocion-articulo"><%= products[index].fees %>  cuotas sin interes</p>
                 </div>
-                <div class="articulo">
-                    <img src="/images/gorra.jpg" alt="" class="imagen-articulo">
-                    <p class="descripcion">Gorra Hurley</p>
-                    <p class="precio">$3500</p>
-                    <p class="promocion-articulo">3 cuotas sin interes</p>
-                </div>
-                <div class="articulo">
-                    <img class="imagen-articulo" src="/images/remerarosanike.jpg" alt="">
-                    <p class="descripcion">Remera Rosa Nike</p>
-                    <p class="precio">$4500</p>
-                    <p class="promocion-articulo">6 cuotas sin interes</p>
-                </div>
-                <div class="articulo">
-                    <img class="imagen-articulo" src="/images/remeravans.jpg" alt="">
-                    <p class="descripcion">Remera Vans</p>
-                    <p class="precio">$3600</p>
-                    <p class="promocion-articulo">18 cuotas sin interes</p>
-                </div>
+                 <% }) %>
             </section>
             <section class="sectionHome">
                 <h3 class="tituloHome">Destacados</h3>
