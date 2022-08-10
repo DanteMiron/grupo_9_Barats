@@ -1,6 +1,5 @@
 const { validationResult } = require('express-validator');
-const actions = require('../database/actions');
-const path = '\\JSON\\products.json'; 
+
 const db = require("../../database/models");
 
 const productController = {
@@ -62,9 +61,11 @@ const productController = {
             })
         res.redirect('/products'); 
         } else {
-            res.render('products/edit',{ errors : errors.mapped(), old: req.body})
+            db.Producto.findByPk(req.params.id)
+            .then(function(productId){
+                res.render('products/edit', { productId : productId,errors : errors.mapped(), old: req.body });
         }
-    },
+    )}},
     delete: function (req, res) {
         db.Producto.destroy({
             where: {
@@ -138,6 +139,21 @@ const productController = {
              .then(function([productId,type,category]){
                  res.render('products/product', { productId: productId, category: category, type : type })
              })
+        
+    },
+    search: function (req,res){
+        let pedidoPelicula = db.Producto.findAll({
+            where:{
+                name: {[db.Sequelize.Op.like]: `%${req.query.txtBarra}%`}
+        }
+    });
+        let pedidoCategoria = db.Categoria.findAll();
+        let pedidoTipo = db.Tipo.findAll();
+
+        Promise.all([pedidoPelicula,pedidoTipo,pedidoCategoria])
+            .then(function([products,type,category]){
+                res.render('products/search', { products: products, category: category, type : type })
+            })
         
     }
 

@@ -1,7 +1,5 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
-const actions = require('../database/actions');
-const path = '\\JSON\\users.json';
 const db = require("../../database/models");
 
 
@@ -48,7 +46,8 @@ const userController = {
                 email: req.body.email,
                 tel: req.body.tel,
                 image: req.file.filename,
-                password: passwordOk
+                password: passwordOk,
+                admin: 0
             })
             res.redirect('/users');
         } else {
@@ -81,10 +80,8 @@ const userController = {
             db.Usuario.update({
                 name: req.body.name,
                 last_name: req.body.lastName,
-                email: req.body.email,
                 tel: req.body.tel,
                 image: req.file.filename,
-                password: req.body.password
             }, {
                 where: {
                     id: req.params.id
@@ -108,7 +105,18 @@ const userController = {
     },
     logout: function(req, res) {
         req.session.destroy();
-        res.redirect('/users/login');
-    } 
+        console.log(req.session);
+        res.redirect('/');
+    },
+    admin: function(req, res){
+        db.Usuario.update({
+            admin: 1
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('/')
+    }
 }
 module.exports = userController;

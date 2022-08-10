@@ -20,7 +20,7 @@ module.exports = function (sequelize, dataTypes){
             allowNull: false
         },
         price:{
-            type: dataTypes.STRING(45),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         image:{

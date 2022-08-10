@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head')%>
+
+    <body>
+
+        <%- include('../partials/header')%>
+            <main class="mainList">
+                <% for(i=0 ; products.length> i; i++){ %>
+                    <a href="../products/<%= products[i].id %>" id="user">
+                        <div class="containerUsers">
+                            <div class="descriptionUser">
+                            <p><b>Nombre:</b> <%= products[i].name; %>
+                            </p>
+                            <p><b>Descripción:</b> <%= products[i].description; %>
+                            </p>
+                            <p><b>Categoría:</b> <%= category[products[i].categoría_id].name; %>
+                            </p>
+                            <p><b>Tipo:</b> <%= type[products[i].tipo_id].name; %>
+                            </p>
+                            <p><b>Precio:</b> $<%= products[i].price; %>
+                            </p>
+                            </div>
+                            <img src="/productImg/<%= products[i].image ? products[i].image : 'default.png'; %>" alt="imgUser" class="imgUser">
+                        </div>
+                    </a>
+                    <% } %>
+            </main>
+            <%- include('../partials/footer')%>
+    </body>
+
+</html>

@@ -1,6 +1,4 @@
 const { body } = require('express-validator');
-const actions = require('../database/actions');
-const path = '\\JSON\\users.json';
 const db = require("../../database/models");
 
 
@@ -8,6 +6,7 @@ const db = require("../../database/models");
 const userMiddlewares = {
     validateUser :[
     body('name').notEmpty().withMessage('Debes completar este campo'),
+    body('lastName').notEmpty().withMessage('Debes completar este campo'),
     body('email').notEmpty().withMessage('Debes completar este campo').bail().isEmail().withMessage('Debes colocar un email valido').custom(async (value, {req})=>{
         let users = await db.Usuario.findAll();
         if(users.find(user=> user.email === req.body.email)){

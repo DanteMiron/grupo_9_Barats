@@ -9,35 +9,42 @@
             <main class="mainRegister">
                 <h2 class="tituloRegister">CREAR CUENTA</h2>
                 <form action="/users/register" method="POST" class="formulario" enctype="multipart/form-data">
-                    <label class="labelRegister" for="name">Nombre :</label><input class="inputRegister"
-                        type="text" name="name" id="name" value="<%= locals.old ? old.name : null%>">
+                    <label class="labelRegister" for="name">Nombre :</label><input class="inputRegister" type="text"
+                        name="name" id="name" value="<%= locals.old ? old.name : null%>">
                     <%= (locals.errors && errors.name) ? errors.name.msg + ' 👆' : "" %>
+                    <p id="errorName"></p>
                     <label class="labelRegister" for="lastName">Apellido :</label><input class="inputRegister"
-                        type="text" name="lastName" id="lastName" value="<%= locals.old ? old.lastName : null%>">
-                    <%= (locals.errors && errors.lastName) ? errors.lastName.msg + ' 👆' : "" %>
-                        <label class="labelRegister" for="email">E-mail :</label><input class="inputRegister"
-                            type="email" name="email" id="email" value="<%= locals.old ? old.email : null%>">
-                        <%= (locals.errors && errors.email) ? errors.email.msg + ' 👆' : "" %>
-                            <label class="labelRegister" for="tel">Teléfono :</label><input class="inputRegister"
-                                type="num" name="tel" id="tel" value="<%= locals.old ? old.tel : null%>">
-                            <%= (locals.errors && errors.tel) ? errors.tel.msg + ' 👆' : "" %>
-                                <label for="img" class="labelRegister">Imagen de perfil</label><input type="file"
-                                    class="inputRegister" name="img" id="img" accept="image/*" >
-                                <%= (locals.errors && errors.img) ? errors.img.msg + ' 👆' : "" %>
-                                    <label class="labelRegister" for="password">Contraseña :</label><input
-                                        class="inputRegister" type="password" name="password" id="password" value="<%= locals.old ? old.password : null%>">
-                                    <%= (locals.errors && errors.password) ? errors.password.msg + ' 👆' : "" %>
-                                        <label class="labelRegister" for="passwordConfirmed">Confirmar Contraseña
-                                            :</label><input class="inputRegister" type="password"
-                                            name="passwordConfirmed" id="passwordConfirmed" value="<%= locals.old ? old.passwordConfirmed : null%>">
-                                            <%= (locals.errors && errors.passwordConfirmed) ? errors.passwordConfirmed.msg + ' 👆' : "" %>
-
-                                        <div id="boton">
-                                            <button type="reset">Borrar</button>
-                                            <button type="submit">Enviar</button>
-                                        </div>
+                            type="text" name="lastName" id="lastName" value="<%= locals.old ? old.lastName : null%>">
+                        <%= (locals.errors && errors.lastName) ? errors.lastName.msg + ' 👆' : "" %>
+                    <p id="errorLastName"></p>
+                    <label class="labelRegister" for="email">E-mail :</label><input class="inputRegister"
+                                type="email" name="email" id="email" value="<%= locals.old ? old.email : null%>">
+                            <%= (locals.errors && errors.email) ? errors.email.msg + ' 👆' : "" %>
+                    <p id="errorEmail"></p>
+                    <label class="labelRegister" for="tel">Teléfono :</label><input class="inputRegister"
+                                    type="num" name="tel" id="tel" value="<%= locals.old ? old.tel : null%>">
+                                <%= (locals.errors && errors.tel) ? errors.tel.msg + ' 👆' : "" %>
+                    <p id="errorTel"></p>
+                    <label for="img" class="labelRegister">Imagen de perfil</label><input type="file"
+                                        class="inputRegister" name="img" id="img" accept="image/*">
+                                    <%= (locals.errors && errors.img) ? errors.img.msg + ' 👆' : "" %>
+                    <p id="errorImg"></p>
+                    <label class="labelRegister" for="password">Contraseña :</label><input
+                                            class="inputRegister" type="password" name="password" id="password"
+                                            value="<%= locals.old ? old.password : null%>">
+                                        <%= (locals.errors && errors.password) ? errors.password.msg + ' 👆' : "" %>
+                                        <p id="errorPassword"></p>
+                    <label class="labelRegister" for="passwordConfirmed">Confirmar Contraseña:</label><input class="inputRegister" type="password"
+                    name="passwordConfirmed" id="passwordConfirmed" value="<%= locals.old ? old.passwordConfirmed : null%>">
+                    <%= (locals.errors && errors.passwordConfirmed) ? errors.passwordConfirmed.msg + ' 👆' : "" %>
+                    <p id="errorPasswordConfirmed"></p>
+                                                <div id="boton">
+                                                    <button type="reset">Borrar</button>
+                                                    <button type="submit" id="buttonSend">Enviar</button>
+                                                </div>
                 </form>
             </main>
+            <script src="../../js/register.js"></script>
             <%- include('../partials/footer')%>
     </body>
 

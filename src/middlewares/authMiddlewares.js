@@ -1,8 +1,8 @@
-function authtMiddlewares(req,res,next){
-    if(!req.session.userLogged){
-        return res.redirect('/users/login')
-    }
-    next();
-    }
-    
-    module.exports = authtMiddlewares;
+function authMiddlewares(req,res,next){
+if(req.session.userLogged && (req.session.userLogged.admin === 0)){
+    return res.render('permisos')
+}
+next();
+}
+
+module.exports = authMiddlewares;

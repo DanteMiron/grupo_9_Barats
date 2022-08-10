@@ -30,6 +30,10 @@ module.exports = function (sequelize, dataTypes){
         password:{
             type: dataTypes.STRING(80),
             allowNull: false
+        },
+        admin:{
+            type: dataTypes.TINYINT(1),
+            allowNull: false
         }
     }
     let config = {

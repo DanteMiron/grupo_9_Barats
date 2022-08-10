@@ -10,16 +10,21 @@
                 <h2 class="tituloLogin">INICIAR SESIÓN</h2>
                 <form action="/users/login" method="post" class="formulario">
                     <label class="labelLogin" for="email">Email de Usuario :</label><input class="inputLogin"
-                        type="text" name="email" id="email" >
-                        <%= (locals.errors && errors.email) ? errors.email.msg + ' 👆' : "" %>
-                    <label class="labelLogin" for="password">Contraseña :</label><input class="inputLogin"
-                        type="password" name="password" id="password" >
-                    <input type="checkbox" name="remember_user" ><label for="remember_user" class="labelLogin"> Recordar mi Usuario</label>    
-                    <div id="boton">
-                        <button type="submit" class="botonLogin">Entrar</button>
-                    </div>
+                        type="text" name="email" id="email">
+                    <%= (locals.errors && errors.email) ? errors.email.msg + ' 👆' : "" %>
+                    <p id="errorEmail"></p>
+                        <label class="labelLogin" for="password">Contraseña :</label><input class="inputLogin"
+                            type="password" name="password" id="password">
+                            <p id="errorPassword"></p>
+                        <div class="recordarUsuario"><input type="checkbox" name="remember_user"><label for="remember_user" class="labelLogin">
+                                Recordar mi Usuario</label>
+                        </div>
+                        <div id="boton">
+                            <button type="submit" class="botonLogin">Entrar</button>
+                        </div>
                 </form>
             </main>
+            <script src="../../js/loginUser.js"></script>
             <%- include('../partials/footer')%>
     </body>
 

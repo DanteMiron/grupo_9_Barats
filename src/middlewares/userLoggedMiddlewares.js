@@ -1,5 +1,3 @@
-const actions = require('../database/actions');
-const path = '\\JSON\\users.json';
 const db = require("../../database/models");
 
 

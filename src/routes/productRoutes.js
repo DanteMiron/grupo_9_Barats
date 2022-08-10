@@ -4,6 +4,8 @@ const productController = require('../controllers/productController')
 const productMiddlewares = require('../middlewares/productMiddlewares')
 const multer = require('multer');
 const path = require('path'); 
+const guestMiddlewares = require('../middlewares/guestMiddlewares');
+const authMiddlewares = require('../middlewares/authMiddlewares');
 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -19,19 +21,17 @@ let storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get('/ninos', productController.ninos);
-
-router.get('/create', productController.registerProduct);
+router.get('/create', guestMiddlewares, authMiddlewares, productController.registerProduct);
 router.post('/create', upload.single('imageProduct'), productMiddlewares.validateProduct, productController.create);
-
-router.get('/', productController.list);  
-
-router.get('/:id/edit', productController.editView);
-router.put('/:id/edit', upload.single('imageProduct'), productController.edit);
-router.delete('/:id', productController.delete);
+router.get('/', guestMiddlewares, authMiddlewares, productController.list);  
 router.get('/hombres', productController.hombres);
 router.get('/mujeres', productController.mujeres);
 router.get('/accesorios', productController.accesorios);
-router.get('/:id', productController.product);
+router.get('/search',productController.search)
+router.get('/:id/edit', guestMiddlewares,authMiddlewares, productController.editView);
+router.put('/:id/edit', guestMiddlewares,authMiddlewares, upload.single('imageProduct'),productMiddlewares.validateProduct, productController.edit);
+router.delete('/:id', productController.delete);
+router.get('/:id', guestMiddlewares, productController.product);
 
 
 

@@ -24,9 +24,9 @@
                             <td class="td"><%= products[i].price %></td>
                             <td class="td"><%= category[products[i].categoría_id].name%></td>
                             <td class="td"><%= type[products[i].tipo_id].name %></td>
-                            <td class="td"><a href="/products/<%= products[i].id %>/edit"><button type="submit"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                <form action="/products/<%= products[i].id %>?_method=DELETE" method="POST">
-                                    <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
+                            <td class="td"><a href="/products/<%= products[i].id %>/edit"><button type="submit" id="icon"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                <form action="/products/<%= products[i].id %>?_method=DELETE" method="POST" class="borrar">
+                                    <button type="submit" id="icon" class="buttonConfirm"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
                                 </form>
                             </td>
                         </tr>
@@ -34,6 +34,7 @@
                       </table>
                       <a href="/products/create"><button type="submit">Crear</button></a> 
             </main>
+            <script src="../../js/listProducts.js"></script>
             <%- include('../partials/footer')%>
     </body>
 

@@ -5,8 +5,9 @@
     <div class="caja-header">
         <ul class="nav">
             <% if (locals.isLogged){ %>
+            <li><img class="imgLogged" src="/profileImg/<%= locals.userLogged.image %>" alt=""></li>
             <li>MI CUENTA </li>
-            <li><img class="imgLogged" src="profileImg/<%= locals.userLogged.image %>" alt=""></li>
+            <a href="/users/logout"><li>CERRAR SESIÓN</li></a>
             <% } else { %>
             <a href="/users/register"><li>Crear cuenta</li></a>
             <a href="/users/login"><li>Iniciar sesión</li></a>
@@ -18,9 +19,8 @@
             <a href="/products/mujeres"><li>MUJERES</li></a>
             <a href="/products/ninos"><li>NIÑOS/AS</li></a>
             <a href="/products/accesorios"><li>ACCESORIOS</li></a>
-            <li>REBAJAS</li>
         </ul>
-        <form action="" method="" class="barra">
+        <form action="/products/search" method="GET" class="barra">
             <input type="text" name="txtBarra" id="barra">
         </form>
         <div class="burger-menu">

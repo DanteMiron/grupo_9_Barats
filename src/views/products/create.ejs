@@ -8,12 +8,16 @@
         <form action="/products/create" method="POST" class="formulario" enctype="multipart/form-data">
             <label for="nameProduct" class="labelLogin">Nombre del Producto :</label><input class="inputLogin"  type="text" name="nameProduct" id="nameProduct">
             <%= (locals.errors && errors.nameProduct) ? errors.nameProduct.msg + ' 👆' : "" %>
+            <p id="errorNameProduct"></p>
             <label for="descriptionProduct" class="labelLogin">Descripción :</label><textarea class="inputLogin"  name="descriptionProduct" id="descriptionProduct" cols="30" rows="10"></textarea>
             <%= (locals.errors && errors.descriptionProduct) ? errors.descriptionProduct.msg + ' 👆' : "" %>
+            <p id="errorDescriptionProduct"></p>
             <label for="imageProduct" class="labelLogin">Imagen del producto :</label><input class="inputLogin"  type="file" name="imageProduct" id="imageProduct">
             <%= (locals.errors && errors.imageProduct) ? errors.imageProduct.msg + ' 👆' : "" %>
+            <p id="errorImgProduct"></p>
             <h3 class="labelLogin">Categoría :</h3>
             <%= (locals.errors && errors.categoryProduct) ? errors.categoryProduct.msg + ' 👉' : "" %>
+            <p id="errorCategoryProduct"></p>
             <div class="radio">
             <label for="categoryProduct" class="radioLabel">Hombre</label><input type="radio" name="categoryProduct" id="categoryProduct" value="0">
             <label for="categoryProduct" class="radioLabel">Mujer</label><input type="radio" name="categoryProduct" id="categoryProduct" value="1">
@@ -22,6 +26,7 @@
             </div>
             <h3 class="labelLogin">Tipo :</h3>
             <%= (locals.errors && errors.typeProduct) ? errors.typeProduct.msg + ' 👉' : "" %>
+            <p id="errorTypeProduct"></p>
             <div class="radio">
             <label for="typeProduct" class="radioLabel">Remera</label><input type="radio" name="typeProduct" id="typeProduct" value="0">
             <label for="typeProduct" class="radioLabel">Pantalon</label><input type="radio" name="typeProduct" id="typeProduct" value="1">
@@ -33,6 +38,7 @@
         
         <label for="priceProduct" class="labelLogin">Precio :</label><input class="inputLogin"  type="number" name="priceProduct" id="priceProduct">
         <%= (locals.errors && errors.priceProduct) ? errors.priceProduct.msg + ' 👆' : "" %>
+        <p id="errorPriceProduct"></p>
         <label for="cuotas" class="labelLogin">Cuotas :</label>
                         <select name="cuotas" id="cuotas" class="inputLogin" >
                             <option value="3">3</option>
@@ -46,6 +52,7 @@
             </div>
         </form>
     </main>
+    <script src="../../js/createProduct.js"></script>
     <%- include('../partials/footer')%>
 </body>  
 </html>

@@ -8,41 +8,33 @@
         <main class="mainHome">
             <section class="sectionHome">
                 <h3 class="tituloHome">Ofertas</h3>
-                <% products.forEach((user,index) => { %>
+                <% products.forEach((product,index) => { %>
+                
                 <div class="articulo">
+                    <a href="/products/<%= product.id %>" class="productLink">
                     <img src="/productImg/<%= products[index].image ? products[index].image : 'default.png'; %>" alt="" class="imagen-articulo">
                     <p class="descripcion"><%= products[index].name %> </p>
                     <p class="precio">$<%= products[index].price %> </p>
                     <p class="promocion-articulo"><%= products[index].fees %>  cuotas sin interes</p>
+                    </a>
                 </div>
+              
                  <% }) %>
             </section>
             <section class="sectionHome">
-                <h3 class="tituloHome">Destacados</h3>
-                <div class="articulo">
-                    <img class="imagen-articulo" src="/images/vestidomujer1.jpg" alt="">
-                    <p class="descripcion">Vestido Mujer</p>
-                    <p class="precio">$6000</p>
-                    <p class="promocion-articulo">6 cuotas sin interes</p>
-                </div>
-                <div class="articulo">
-                    <img class="imagen-articulo" src="/images/zapafloreada.jpg" alt="">
-                    <p class="descripcion">Zapatilla Floreada VANS</p>
-                    <p class="precio">$ 12000</p>
-                    <p class="promocion-articulo">12 cuotas sin interes</p>
-                </div>
-                <div class="articulo">
-                    <img class="imagen-articulo" src="/images/zapanikeamarilla.jpg" alt="">
-                    <p class="descripcion">Zapatilla Nike Amarilla</p>
-                    <p class="precio">$ 5200</p>
-                    <p class="promocion-articulo">6 cuotas sin interes</p>
-                </div>
-                <div class="articulo">
-                    <img class="imagen-articulo" src="/images/zapanikerosa.jpg" alt="">
-                    <p class="descripcion">Zapatilla Nike Rosa</p>
-                    <p class="precio">$ 17500</p>
-                    <p class="promocion-articulo">3 cuotas sin interes</p>
-                </div>
+                <h3 class="tituloHome">AHORA 12</h3>
+                <% ahora12.forEach((product,index) => { %>
+                
+                    <div class="articulo">
+                        <a href="/products/<%= product.id %>" class="productLink">
+                        <img src="/productImg/<%= ahora12[index].image ? ahora12[index].image : 'default.png'; %>" alt="" class="imagen-articulo">
+                        <p class="descripcion"><%= ahora12[index].name %> </p>
+                        <p class="precio">$<%= ahora12[index].price %> </p>
+                        <p class="promocion-articulo"><%= ahora12[index].fees %>  cuotas sin interes</p>
+                        </a>
+                    </div>
+                  
+                     <% }) %>
             </section>
         </main>
         <%- include('./partials/footer')%>

@@ -24,9 +24,12 @@
                             <td class="td"><%= users[i].last_name %></td>
                             <td class="td"><%= users[i].tel%></td>
                             <td class="td"><%= users[i].email %></td>
-                            <td class="td"><a href="/users/<%= users[i].id %>/edit"><button type="submit"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                <form action="/users/<%= users[i].id %>?_method=DELETE" method="POST">
-                                    <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
+                            <td class="td"><a href="/users/<%= users[i].id %>/edit"><button type="submit" id="icon"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                <form action="/users/<%= users[i].id %>?_method=DELETE" method="POST" class="borrar">
+                                    <button type="submit" id="icon" class="buttonConfirm"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
+                                </form>
+                                <form action="/users/<%=users[i].id%>/admin?_method=PUT" method="POST">
+                                    <button type="submit" id="icon"><i class="fa fa-unlock" aria-hidden="true"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -34,6 +37,7 @@
                       </table>
                    
             </main>
+            <script src="../../js/listProducts.js"></script>
             <%- include('../partials/footer')%>
     </body>
 

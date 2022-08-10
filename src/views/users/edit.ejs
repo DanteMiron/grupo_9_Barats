@@ -13,20 +13,19 @@
                     <label class="labelRegister" for="name">Nombre y Apellido :</label><input class="inputRegister"
                         type="text" name="name" id="name" value="<%= locals.old ? old.name : userId.name %>">
                         <%= (locals.errors && errors.name) ? errors.name.msg + ' 👆' : "" %>
-                    <label class="labelRegister" for="email">E-mail :</label><input class="inputRegister" type="email"
-                        name="email" id="email" value="<%= locals.old ? old.email :  userId.email %>">
-                        <%= (locals.errors && errors.email) ? errors.email.msg + ' 👆' : "" %>
+                        <p id="errorName"></p>
+                        <label class="labelRegister" for="lastName">Apellido :</label><input class="inputRegister"
+                            type="text" name="lastName" id="lastName" value="<%= locals.old ? old.lastName : userId.last_name%>">
+                        <%= (locals.errors && errors.lastName) ? errors.lastName.msg + ' 👆' : "" %>
+                        <p id="errorLastName"></p>
                     <label class="labelRegister" for="tel">Teléfono :</label><input class="inputRegister" type="num"
                         name="tel" id="tel" value="<%= locals.old ? old.tel :  userId.tel %>">
                         <%= (locals.errors && errors.tel) ? errors.tel.msg + ' 👆' : "" %>
+                        <p id="errorTel"></p>
                     <label for="img" class="labelRegister">Imagen de perfil</label><input type="file"
                         class="inputRegister" name="img" id="img" accept="image/*">
                     <%= (locals.errors && errors.img) ? errors.img.msg + ' 👆' : "" %>
-                        <label class="labelRegister" for="password">Contraseña :</label><input class="inputRegister"
-                            type="password" name="password" value="<%= locals.old ? old.password : userId.password %>" id="password">
-                            <%= (locals.errors && errors.password) ? errors.password.msg + ' 👆' : "" %>
-                        <label class="labelRegister" for="passwordConfirmed">Confirmar Contraseña :</label><input
-                            class="inputRegister" type="password" name="passwordConfirmed" id="passwordConfirmed">
+                    <p id="errorImg"></p>
                         <div id="boton">
                             <button type="reset">Borrar</button>
                             <button type="submit">Enviar</button>
@@ -34,6 +33,7 @@
                 </form>
 
             </main>
+            <script src="../../js/editUser.js"></script>
             <%- include('../partials/footer')%>
     </body>
 
