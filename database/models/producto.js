@@ -31,9 +31,6 @@ module.exports = function (sequelize, dataTypes){
             type: dataTypes.STRING(45),
             allowNull: false
         },
-        usuarios_id:{
-            type: dataTypes.INTEGER, 
-        },
         categoría_id: {
             type: dataTypes.INTEGER,
             allowNull: false
@@ -49,10 +46,6 @@ module.exports = function (sequelize, dataTypes){
     }
     let Producto = sequelize.define(alias, cols, config);
     Producto.associate = function(models){
-        Producto.belongsTo(models.Usuario,{
-            as: "usuario",
-            foreignKey: "usuarios_id"
-        });
         Producto.belongsTo(models.Categoria,{
             as: "categoria",
             foreignKey: "categoría_id"

@@ -1,5 +1,3 @@
-
-
 window.addEventListener('load',function(){
     let buttonConfirm = document.querySelectorAll('.buttonConfirm')
     

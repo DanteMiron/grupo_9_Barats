@@ -16,7 +16,9 @@ const userController = {
             email: req.body.email
         }
      }).then(function(userOk){
+        console.log(userOk);
          let passwordOk= bcryptjs.compareSync(req.body.password , userOk.password );
+         console.log(passwordOk)
          if(passwordOk){
             delete userOk.password
             req.session.userLogged = userOk;
@@ -49,7 +51,7 @@ const userController = {
                 password: passwordOk,
                 admin: 0
             })
-            res.redirect('/users');
+            res.redirect('/users/login');
         } else {
             res.render('users/register', { errors : errors.mapped(), old: req.body });
         } 
