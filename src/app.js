@@ -34,7 +34,7 @@ app.use('/', homeRoutes);
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 app.use('/api', apiRoutes);
-app.listen(3000, () => console.log("Servidor Funcionando"));
+app.listen(3001, () => console.log("Servidor Funcionando"));
 
 app.use((req,res,next )=>{
 res.status(404).send("Not-Found");

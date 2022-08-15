@@ -35,7 +35,7 @@ module.exports = {
     },
     products: function(req,res){
         let products = db.Producto.findAll({
-            attributes: ['id','name', 'description','categoría_id','tipo_id']
+            attributes: ['id','name', 'description','categoría_id','tipo_id','price','image']
         });
         let hombre = db.Producto.findAll({
             where: {
@@ -62,14 +62,17 @@ module.exports = {
 
         Promise.all([products,hombre,mujer,niño,accesorios,pedidoCategoria,pedidoTipo])
             .then(function ([products,hombre,mujer,niño,accesorio,categoria,tipo]){
+                let priceTotal = 0;
                 products.map((usuario,i)=>{
                     products[i].dataValues.array =[
                         { categoria: categoria[products[i].dataValues.categoría_id].name},
                         { tipo: tipo[products[i].dataValues.tipo_id].name}
                     ];
-                    products[i].dataValues.detail = `http://localhost:3000/api/products/${products[i].id}`;
+                    products[i].dataValues.detail = `http://localhost:3001/api/products/${products[i].id}`;
                     delete products[i].dataValues.categoría_id;
                     delete products[i].dataValues.tipo_id
+                    priceTotal +=  products[i].dataValues.price
+                    delete products[i].dataValues.price
                 })
                 return res.status(200).json({
                     count: products.length,
@@ -78,8 +81,9 @@ module.exports = {
                         mujer: mujer.length,
                         niño: niño.length,
                         accesorio: accesorio.length
-                    },
-                    products: products
+                        },
+                    products: products,
+                    priceTotal: priceTotal
                 })
             })
 
@@ -101,7 +105,7 @@ module.exports = {
                         {categoria: categoria[product.categoría_id].name},
                         {tipo: tipo[product.tipo_id].name}
                     ],
-                    url: `http://localhost:3000/productImg/${product.image}`
+                    url: `http://localhost:3001/productImg/${product.image}`
                 })
             })
     }
