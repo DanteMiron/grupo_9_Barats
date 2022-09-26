@@ -16,16 +16,18 @@ const userController = {
             email: req.body.email
         }
      }).then(function(userOk){
-         let passwordOk= bcryptjs.compareSync(req.body.password , userOk.password );
-         if(passwordOk){
-            delete userOk.password
+         let passwordOk
+         if(userOk){
+            passwordOk=  bcryptjs.compareSync(req.body.password , userOk.password );
+          if(passwordOk){
+           delete userOk.password
             req.session.userLogged = userOk;
             if(req.body.remember_user){
-                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60})
+                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
             }
             res.redirect('/users/' + userOk.id)
          }
-        
+        } 
         res.render('users/login', {
             errors:{ 
                 email: {
@@ -33,8 +35,9 @@ const userController = {
                 }
             }
         })
-        }
-    )}
+    
+        })
+    }        
     ,
     create: function (req, res) {
         let errors = validationResult(req);
@@ -49,7 +52,7 @@ const userController = {
                 password: passwordOk,
                 admin: 0
             })
-            res.redirect('/users');
+            res.redirect('/users/login');
         } else {
             res.render('users/register', { errors : errors.mapped(), old: req.body });
         } 
@@ -105,7 +108,6 @@ const userController = {
     },
     logout: function(req, res) {
         req.session.destroy();
-        console.log(req.session);
         res.redirect('/');
     },
     admin: function(req, res){

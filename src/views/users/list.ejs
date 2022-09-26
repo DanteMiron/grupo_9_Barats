@@ -28,7 +28,7 @@
                                 <form action="/users/<%= users[i].id %>?_method=DELETE" method="POST" class="borrar">
                                     <button type="submit" id="icon" class="buttonConfirm"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
                                 </form>
-                                <form action="/users/<%=users[i].id%>/admin?_method=PUT" method="POST">
+                                <form action="/users/<%=users[i].id%>/admin?_method=PUT" method="POST" class="buttonAdmin">
                                     <button type="submit" id="icon"><i class="fa fa-unlock" aria-hidden="true"></i></button>
                                 </form>
                             </td>
@@ -37,7 +37,8 @@
                       </table>
                    
             </main>
-            <script src="../../js/listProducts.js"></script>
+            <script src="../../js/buttonConfirm.js"></script>
+            <script src="../../js/buttonAdmin.js"></script>
             <%- include('../partials/footer')%>
     </body>
 

@@ -22,7 +22,7 @@ Participantes:
 
 Dante Miron: 
 
-Graduado como técnico electrónico, trabajo en Ingeniería Boggio y actualmemte me encuentro estudiando font-end y back-end. Mis hobbies son jugar al futbol o futsal y juntarme con amigos.
+Graduado como técnico electrónico, trabajo en Ingeniería Boggio y actualmemte me encuentro estudiando Web Full Stack en Digital House. Mis hobbies son jugar al futbol o futsal y juntarme con amigos.
 
 
 Tito Martinez: 

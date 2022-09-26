@@ -5,8 +5,12 @@
     <div class="caja-header">
         <ul class="nav">
             <% if (locals.isLogged){ %>
+            <% if(locals.userLogged.admin == 1){ %> 
+            <a href="/products"><li>Productos</li></a>
+            <a href="/users"><li>Usuarios</li></a>
+                <%  }%> 
             <li><img class="imgLogged" src="/profileImg/<%= locals.userLogged.image %>" alt=""></li>
-            <li>MI CUENTA </li>
+            <a href="/users/<%= locals.userLogged.id %>"><li>MI CUENTA </li></a>
             <a href="/users/logout"><li>CERRAR SESIÓN</li></a>
             <% } else { %>
             <a href="/users/register"><li>Crear cuenta</li></a>
