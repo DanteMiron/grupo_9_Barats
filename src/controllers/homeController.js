@@ -3,7 +3,7 @@ const db = require("../../database/models");
 const homeController = {
     index : (req, res) => {
         let productos = db.Producto.findAll({
-                            order: [["price","ASC"]],
+                            order: [["price","DESC"]],
                             limit: 4
                         });
         let ahora12 = db.Producto.findAll({
