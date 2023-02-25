@@ -1,15 +1,15 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const publicPath = path.resolve(__dirname, '../public');
-const homeRoutes = require ('./routes/homeRoutes');
-const userRoutes = require ('./routes/userRoutes');
-const productRoutes = require ('./routes/productRoutes');
-const apiRoutes = require ('./routes/apiRoutes');
+const publicPath = path.resolve(__dirname, './public');
+const homeRoutes = require ('./src/routes/homeRoutes');
+const userRoutes = require ('./src/routes/userRoutes');
+const productRoutes = require ('./src/routes/productRoutes');
+const apiRoutes = require ('./src/routes/apiRoutes');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddlewares');
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddlewares');
 
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: false}));
@@ -25,9 +25,8 @@ app.use(session({
 app.use(userLoggedMiddleware);
 
 
-
-
 app.set('view engine', 'ejs');
+app.set('views', './src/views')
 
 app.use('/', homeRoutes);
 app.use('/users', userRoutes);
