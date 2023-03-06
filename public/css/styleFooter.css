@@ -3,12 +3,13 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     background-color: black;
-    color: red;
+    color: white;
     text-align: center;
     padding: 0% 2% 0% 2%;
     justify-content: center;
     position: relative;
     z-index: 0;
+    bottom: 0;
     width: 100%;
 }
 
@@ -17,7 +18,7 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     font-size: 2rem;
-    padding: 2% 0% 0% 70%;
+    padding: 2% 0% 2% 70%;
     width: 100%;
     justify-content: space-around;
 }
